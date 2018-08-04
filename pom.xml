@@ -22,11 +22,18 @@
 			<version>${diozero.version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.diozero/diozero-provider-pi4j -->
+		<!-- https://mvnrepository.com/artifact/com.diozero/diozero-provider-wiringpi -->
 		<dependency>
 			<groupId>com.diozero</groupId>
-			<artifactId>diozero-provider-pi4j</artifactId>
-			<version>${diozero.version}</version>
+			<artifactId>diozero-provider-pigpio</artifactId>
+			<version>0.11</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.diozero/diozero-ws281x-java -->
+		<dependency>
+			<groupId>com.diozero</groupId>
+			<artifactId>diozero-ws281x-java</artifactId>
+			<version>0.11</version>
 		</dependency>
 	</dependencies>
 
@@ -45,7 +52,7 @@
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>net.bluephod.rpi.dztest.LedBlinker</mainClass>
+							<mainClass>net.bluephod.rpi.dztest.StripTest</mainClass>
 						</manifest>
 					</archive>
 
@@ -60,6 +67,14 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
